@@ -1,6 +1,7 @@
 const express = require("express");
-
 const app = express();
+
+require("dotenv").config
 
 
 app.get('/api/getapi', (req, res)=>{
@@ -13,10 +14,11 @@ app.get('/api/get_user_details', (req, res)=>{
             name:"muskan",
             age:23,
             contact:12344
-        }
+        },
+    env:process.env.NAME
     })
 })
 
-app.listen(8000, ()=>{
+app.listen(process.env.PORT, ()=>{
     console.log('serevre is running')
 })
